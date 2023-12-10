@@ -12,7 +12,7 @@ function sendMail2(){
         Body : body,
 
     }).then(
-        window.location.href = "verify.html"
+        window.location.href = "verify2.html"
     );
 
     // emailjs.send("service_go5dkmg","template_fu67wpi",{
